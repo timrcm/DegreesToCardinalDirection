@@ -1,0 +1,10 @@
+	CASE WHEN value BETWEEN 0 AND 22.5 THEN 'N' 
+                WHEN value BETWEEN 22.5 AND 67.5 THEN 'NE'
+                WHEN value BETWEEN 67.5 AND 112.5 THEN 'E'
+                WHEN value BETWEEN 112.5 AND 157.5 THEN 'SE'
+                WHEN value BETWEEN 157.5 AND 202.5 THEN 'S'
+                WHEN value BETWEEN 202.5 AND 247.5 THEN 'SW'
+                WHEN value BETWEEN 247.5 AND 292.5 THEN 'W'
+                WHEN value BETWEEN 292.5 AND 337.5 THEN 'NW'
+                ELSE 'N' -- Catches NULL bearings and the 337.5 to 360.0 range
+           END AS 'Direction'
